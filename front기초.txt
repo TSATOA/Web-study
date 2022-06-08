@@ -1,0 +1,9 @@
+html은 마크업 언어라 부른다
+마크업 언어는 <html> 꺽쇠로 표시하는 태그문법 언어다.
+html로 뼈대를 만들고 css로 꾸민다.
+<div 속성이름="속성값"></div>  ex) <div style="color:red"></div>
+
+<meta charset="UTF-8">  //인코딩 값이다. 한글 쓸려면 필요하다.
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  //모바일, PC 화면 크기에 맞게 자동 조절해준다.
+meta 태그는 홈페이지의 중요한 정보들이다.
+<title>Document</title>  //title 태그는 웹 사이트의 제목이다.
