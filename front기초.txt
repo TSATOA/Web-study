@@ -1,9 +1,37 @@
 html은 마크업 언어라 부른다
-마크업 언어는 <html> 꺽쇠로 표시하는 태그문법 언어다.
-html로 뼈대를 만들고 css로 꾸민다.
+마크업 언어는 <html> 꺽쇠로 표시하는 태그문법 언어다
+html로 뼈대를 만들고 css로 꾸민다
 <div 속성이름="속성값"></div>  ex) <div style="color:red"></div>
 
 <meta charset="UTF-8">  //인코딩 값이다. 한글 쓸려면 필요하다.
-<meta name="viewport" content="width=device-width, initial-scale=1.0">  //모바일, PC 화면 크기에 맞게 자동 조절해준다.
-meta 태그는 홈페이지의 중요한 정보들이다.
-<title>Document</title>  //title 태그는 웹 사이트의 제목이다.
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  //모바일, PC 화면 크기에 맞게 자동 조절해준다
+meta 태그는 홈페이지의 중요한 정보들이다
+<title>Document</title>  //title 태그는 웹 사이트의 제목이다
+
+
+<h1>TODO LIST</h1>  //h는 제목을 나타낸다
+    <div>영역</div>  //div는 영역을 나타낸다
+    <br/>  //br은 띄어쓰기를 나타낸다.
+    <p>긴~ <span style="color:red">문장</span>을 쓸 때 </p>  //p는 긴 문장을 나타내고 span을 이용해 꾸밀 수 있다.
+    <hr/>  //선을 나타낸다
+    <ul>  //리스트를 나타낸다
+        <li>1</li>
+        <li>2</li>
+    </ul>
+    <input type="text"/>  //input상자를 만든다
+    <button>버튼</button>   //버튼을 만든다
+    <img src=""/>  //이미지를 가져올 수 있다
+
+css에 대해
+<link rel="stylesheet" href="./main.css"/>  //css파일은 link를 통해서 연결할 수 있다.
+<p class="title title2 title3" id="title">두번째! css배워보자 </p>  //class와 id를 지정할 수 있다
+#title{
+    color:red
+}
+.title{
+    font-size: 130%;
+}  //#은 id를 나타내고, .은 class를 나타낸다
+
+
+폰트는 fonts.google.com에서 얻어오고
+아이콘 및 다양한 기능은 bootstrap에서 얻어오자
