@@ -1,12 +1,37 @@
-const express = require('express')
+const express = require('express');
+const { reviews } = require('../model/db');
 const router = express.Router()
 const db = require('../model/db')
 
 //주소만들어주고
 router.get("/", function(req,res){
     //그림파일 전달할 때. 항상 views 폴더를 바라보고 있다.
-    res.render('index',{title:"EJS메인페이지"});
+    res.render('main',{title:"영화리뷰 사이트"});
 })
+
+router.post("/review/create", function(req,res){
+    let movie_id = req.body.movie_id;
+    let review = req.body.review;
+
+    if(movie_id == '' || movie_id ==0){
+        res.send({success:400})
+    }else{
+        db.reviews.create({
+            movie_id:movie_id,
+            review:review
+        }).then(function(result){
+            res.send({success:200})
+        })
+    }  
+})
+
+router.get("/review/read",function(req,res){
+    let movie_id = req.query.movie_id;
+    db.reviews.findAll({where:{movie_id:movie_id}}).then(function(result){
+        res.send({success:200, data:result})
+    })
+})
+
 
 router.get("/about", function(req,res){
     res.send('About Page');

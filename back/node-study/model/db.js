@@ -20,6 +20,7 @@ sequelize = new Sequelize("class101", "root", "8591", {
 var db = {};
 //우리가 만든 table(users.js 함수)는 sequelize.import로 가져와야한다.
 db.users = sequelize.import(__dirname + "/users.js");
+db.reviews = sequelize.import(__dirname + "/reviews.js");
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;

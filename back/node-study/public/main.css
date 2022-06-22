@@ -1,3 +1,16 @@
-h1{
-    color: blue;
+*{
+    font-family: 'Nanum Pen Script', cursive;
+}
+ 
+body{
+    background-color: darkgray;
+}
+
+#jumbotron{
+    margin-top: 30px;
+    text-align: center;
+}
+
+#review-button{
+    width: 100%;
 }

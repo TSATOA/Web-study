@@ -10,7 +10,7 @@ app.set('view engine', 'ejs');
 app.set('views', './views');
 app.use('/public',express.static(__dirname + '/public'));
 
-app.use(helmet());
+// app.use(helmet()); //보안
 app.use(express.json());
 app.use(express.urlencoded());
 
