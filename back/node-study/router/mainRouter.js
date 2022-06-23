@@ -3,6 +3,40 @@ const { reviews } = require('../model/db');
 const router = express.Router()
 const db = require('../model/db')
 
+//크롤링 준비
+const cheerio = require("cheerio")
+const axios = require("axios")
+const iconv = require("iconv-lite")  
+
+const url = "https://finance.naver.com/sise/lastsearch2.naver" //네이버금융
+
+router.get("/excel/down",function(req,res){
+    let excel_data = [{"A":1,"B":2,"C":3,"D":4}]
+    res.xls('data.xlsx', excel_data);
+})
+
+
+router.get("/crawling",function(req,res){
+
+    axios({url:url, method:"GET",responseType:"arraybuffer"}).then(function(html){  //네이버금융에 접속
+        const content = iconv.decode(html.data,"EUC-KR").toString()  //iconv로 한글로 디코딩해서 깨짐 방지
+        const $ = cheerio.load(content)  //쉽게 html코드로 접근해서 사용할 수 있게 해주는 도구
+        
+        const table = $(".type_5 tr td")
+        table.each(function(i,tag){
+            console.log($(tag).text().trim())  //td에 있는 정보를 공백없이 가져옴
+        })
+        res.send({success:200})
+    })  
+    
+})
+
+//엑셀 자동화
+router.get("/excel", function(req,res){
+    res.render("excel")
+})
+
+
 //주소만들어주고
 router.get("/", function(req,res){
     //그림파일 전달할 때. 항상 views 폴더를 바라보고 있다.
